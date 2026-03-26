@@ -1,0 +1,21 @@
+[package]
+name = "migration"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "migration"
+path = "src/main.rs"
+
+[[bin]]
+name = "run_canary_migrations"
+path = "src/bin/run_canary_migrations.rs"
+
+[dependencies]
+sea-orm-migration = "1.1"
+sea-orm = { workspace = true }
+tokio = { workspace = true }
+chrono = { workspace = true }
+futures = "0.3"

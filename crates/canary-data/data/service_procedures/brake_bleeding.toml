@@ -1,0 +1,61 @@
+id = "brake_bleeding"
+name = "Brake System Bleeding"
+category = "Maintenance"
+description = "Procedure for bleeding air from hydraulic brake system"
+estimated_time_minutes = 45
+tools_required = ["Brake bleeder kit", "Brake fluid", "Wrench set", "Clear tubing", "Catch container"]
+
+[[steps]]
+order = 1
+instruction = "Park vehicle on level surface and engage parking brake"
+warnings = ["Ensure vehicle cannot roll", "Never work under a vehicle that could move"]
+
+[[steps]]
+order = 2
+instruction = "Check brake fluid reservoir and top up to MAX line with correct DOT fluid"
+warnings = ["Use only specified brake fluid type", "Do not mix different DOT ratings", "Brake fluid is corrosive - avoid paint contact"]
+
+[[steps]]
+order = 3
+instruction = "Start bleeding at wheel furthest from master cylinder (usually right rear)"
+warnings = []
+
+[[steps]]
+order = 4
+instruction = "Attach clear tubing to bleeder valve and place other end in catch container with fluid"
+warnings = []
+
+[[steps]]
+order = 5
+instruction = "Have assistant pump brake pedal 3-5 times and hold"
+warnings = ["Do not let pedal go to floor completely"]
+
+[[steps]]
+order = 6
+instruction = "Open bleeder valve while pedal is held - fluid and air will flow out"
+warnings = ["Watch for air bubbles in clear tubing"]
+
+[[steps]]
+order = 7
+instruction = "Close bleeder valve before pedal reaches bottom"
+warnings = ["Valve must be closed before releasing pedal"]
+
+[[steps]]
+order = 8
+instruction = "Repeat pump and bleed cycle until no air bubbles appear"
+warnings = ["Check reservoir frequently - never let it run dry"]
+
+[[steps]]
+order = 9
+instruction = "Move to next wheel (left rear, right front, left front) and repeat process"
+warnings = []
+
+[[steps]]
+order = 10
+instruction = "Top up reservoir to MAX line and test brake pedal firmness"
+warnings = ["Pedal should feel firm and not spongy", "Test brakes in safe area before driving"]
+
+[[steps]]
+order = 11
+instruction = "Dispose of old brake fluid properly - do not reuse"
+warnings = ["Brake fluid is hazardous waste", "Follow local disposal regulations"]

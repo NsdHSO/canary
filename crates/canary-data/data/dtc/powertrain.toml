@@ -1,0 +1,84 @@
+[[dtc_codes]]
+code = "P0301"
+system = "Powertrain"
+description = "Cylinder 1 Misfire Detected"
+
+[[dtc_codes]]
+code = "P0302"
+system = "Powertrain"
+description = "Cylinder 2 Misfire Detected"
+
+[[dtc_codes]]
+code = "P0303"
+system = "Powertrain"
+description = "Cylinder 3 Misfire Detected"
+
+[[dtc_codes]]
+code = "P0304"
+system = "Powertrain"
+description = "Cylinder 4 Misfire Detected"
+
+[[dtc_codes]]
+code = "P0420"
+system = "Powertrain"
+description = "Catalyst System Efficiency Below Threshold (Bank 1)"
+
+[[dtc_codes]]
+code = "P0171"
+system = "Powertrain"
+description = "System Too Lean (Bank 1)"
+
+[[dtc_codes]]
+code = "P0172"
+system = "Powertrain"
+description = "System Too Rich (Bank 1)"
+
+[[dtc_codes]]
+code = "P0300"
+system = "Powertrain"
+description = "Random/Multiple Cylinder Misfire Detected"
+
+[[dtc_codes]]
+code = "P0102"
+system = "Powertrain"
+description = "Mass Air Flow Circuit Low Input"
+
+[[dtc_codes]]
+code = "P0113"
+system = "Powertrain"
+description = "Intake Air Temperature Circuit High Input"
+
+[[dtc_codes]]
+code = "P0118"
+system = "Powertrain"
+description = "Engine Coolant Temperature Circuit High Input"
+
+[[dtc_codes]]
+code = "P0128"
+system = "Powertrain"
+description = "Coolant Thermostat (Coolant Temperature Below Thermostat Regulating Temperature)"
+
+[[dtc_codes]]
+code = "P0335"
+system = "Powertrain"
+description = "Crankshaft Position Sensor A Circuit"
+
+[[dtc_codes]]
+code = "P0340"
+system = "Powertrain"
+description = "Camshaft Position Sensor Circuit"
+
+[[dtc_codes]]
+code = "P0442"
+system = "Powertrain"
+description = "Evaporative Emission System Leak Detected (Small Leak)"
+
+[[dtc_codes]]
+code = "P0455"
+system = "Powertrain"
+description = "Evaporative Emission System Leak Detected (Large Leak)"
+
+[[dtc_codes]]
+code = "P0506"
+system = "Powertrain"
+description = "Idle Control System RPM Lower Than Expected"

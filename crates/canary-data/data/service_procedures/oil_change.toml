@@ -1,0 +1,56 @@
+id = "oil_change"
+name = "Engine Oil Change"
+category = "Maintenance"
+description = "Standard engine oil and filter replacement procedure"
+estimated_time_minutes = 30
+tools_required = ["Oil filter wrench", "Drain pan", "Socket wrench", "Funnel"]
+
+[[steps]]
+order = 1
+instruction = "Warm up engine to operating temperature, then turn off"
+warnings = ["Engine and oil will be hot"]
+
+[[steps]]
+order = 2
+instruction = "Raise vehicle and support on jack stands"
+warnings = ["Ensure vehicle is securely supported", "Never work under a vehicle supported only by a jack"]
+
+[[steps]]
+order = 3
+instruction = "Locate and remove oil drain plug"
+warnings = ["Oil will drain quickly - have drain pan ready"]
+
+[[steps]]
+order = 4
+instruction = "Allow oil to completely drain (5-10 minutes)"
+warnings = []
+
+[[steps]]
+order = 5
+instruction = "Replace drain plug and torque to specification"
+warnings = ["Do not overtighten"]
+
+[[steps]]
+order = 6
+instruction = "Remove old oil filter"
+warnings = ["Some oil will spill when removing filter"]
+
+[[steps]]
+order = 7
+instruction = "Install new filter with light coat of oil on gasket"
+warnings = ["Hand tighten only - do not use filter wrench to install"]
+
+[[steps]]
+order = 8
+instruction = "Lower vehicle and add specified amount of new oil"
+warnings = ["Use correct viscosity oil for your vehicle"]
+
+[[steps]]
+order = 9
+instruction = "Start engine and check for leaks"
+warnings = ["Stop immediately if oil pressure warning appears"]
+
+[[steps]]
+order = 10
+instruction = "Turn off engine, wait 5 minutes, check oil level"
+warnings = ["Add oil if needed to reach full mark"]

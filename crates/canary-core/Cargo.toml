@@ -1,0 +1,17 @@
+[package]
+name = "canary-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+canary-models = { path = "../canary-models" }
+canary-database = { path = "../canary-database" }
+canary-pinout = { path = "../canary-pinout" }
+canary-protocol = { path = "../canary-protocol" }
+canary-dtc = { path = "../canary-dtc" }
+canary-service-proc = { path = "../canary-service-proc" }
+
+[dev-dependencies]
+tokio = { workspace = true }

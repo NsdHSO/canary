@@ -1,0 +1,15 @@
+[package]
+name = "canary-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "canary"
+path = "src/main.rs"
+
+[dependencies]
+canary-core = { path = "../canary-core" }
+clap = { version = "4.5", features = ["derive"] }
+tokio = { workspace = true }

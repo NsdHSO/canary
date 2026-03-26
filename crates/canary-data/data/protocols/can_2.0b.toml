@@ -1,0 +1,4 @@
+id = "can_2.0b"
+name = "CAN 2.0B"
+bit_rate = 500000
+frame_format = "Extended"

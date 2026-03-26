@@ -1,0 +1,11 @@
+[package]
+name = "canary-dtc"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+canary-models = { path = "../canary-models" }
+canary-data = { path = "../canary-data" }
+sea-orm = { workspace = true }

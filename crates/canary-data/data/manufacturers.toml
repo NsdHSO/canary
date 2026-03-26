@@ -1,0 +1,35 @@
+[[manufacturers]]
+id = "universal"
+name = "Universal (All Manufacturers)"
+brands = []
+
+[[manufacturers]]
+id = "vw_group"
+name = "Volkswagen Group"
+
+[[manufacturers.brands]]
+id = "vw"
+name = "Volkswagen"
+
+[[manufacturers.brands]]
+id = "audi"
+name = "Audi"
+parent_id = "vw_group"
+
+[[manufacturers.brands]]
+id = "porsche"
+name = "Porsche"
+parent_id = "vw_group"
+
+[[manufacturers]]
+id = "bmw_group"
+name = "BMW Group"
+
+[[manufacturers.brands]]
+id = "bmw"
+name = "BMW"
+
+[[manufacturers.brands]]
+id = "mini"
+name = "MINI"
+parent_id = "bmw_group"
