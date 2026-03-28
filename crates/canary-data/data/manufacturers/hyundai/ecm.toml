@@ -1,0 +1,297 @@
+# Hyundai Engine Control Modules
+
+[[ecu]]
+id = "hyundai_elantra_2020_ecm"
+name = "Elantra 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2E025"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Elantra"
+years = [2017, 2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
+
+[[ecu]]
+id = "hyundai_sonata_2021_ecm"
+name = "Sonata 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2G025"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Sonata"
+years = [2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "hyundai_tucson_2021_ecm"
+name = "Tucson 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2S025"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Tucson"
+years = [2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "hyundai_santa_fe_2021_ecm"
+name = "Santa Fe 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2T025"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Santa Fe"
+years = [2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "hyundai_kona_2020_ecm"
+name = "Kona 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2E125"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Kona"
+years = [2020]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "hyundai_elantra_2021_tcm"
+name = "Elantra 2021 TCM"
+module_type = "TCM"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Hyundai Transys"
+part_numbers = ["46115-2E025"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Elantra"
+years = [2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Hyundai Transys"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas V850"
+
+[[ecu]]
+id = "hyundai_sonata_2020_bcm"
+name = "Sonata 2020 BCM"
+module_type = "BCM"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Hyundai Mobis"
+part_numbers = ["95400-L1050"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Sonata"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Hyundai Mobis"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "NXP MPC5748G"
+
+[[ecu]]
+id = "hyundai_tucson_2020_abs"
+name = "Tucson 2020 ABS"
+module_type = "ABS"
+manufacturer_id = "hyundai"
+ecu_manufacturer = "Mando"
+part_numbers = ["58920-D3350"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Hyundai"
+model = "Tucson"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Mando"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "Infineon TC1766"
