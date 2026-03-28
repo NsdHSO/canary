@@ -10,6 +10,8 @@ canary-models = { path = "../canary-models" }
 serde = { workspace = true }
 toml = { workspace = true }
 once_cell = { workspace = true }
+flate2 = "1.0"
 
 [build-dependencies]
 toml = { workspace = true }
+flate2 = "1.0"
