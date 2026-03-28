@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Canary Diagnostics",
+    "slug": "canary-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#111827"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.canary.diagnostics"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#111827"
+      },
+      "package": "com.canary.diagnostics"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

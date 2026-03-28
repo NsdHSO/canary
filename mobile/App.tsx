@@ -1,0 +1,2 @@
+// Entry point - re-exports from src/App.tsx
+export { default } from './src/App';
