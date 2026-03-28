@@ -4,8 +4,9 @@ set -e
 # Setup the virtual CAN interface
 /app/setup-vcan.sh
 
-echo "CAN simulator container is running. vcan0 is ready for testing."
-echo "Press Ctrl+C to stop..."
+echo "Starting ECU simulators..."
+echo ""
 
-# Keep the container running
-tail -f /dev/null
+# Run the ECU simulator binary
+# In Task 4, this will connect to vcan0 and handle CAN frames
+exec /app/ecu-simulator

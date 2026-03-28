@@ -25,7 +25,7 @@ members = [
     "crates/canary-service-proc",
     "crates/canary-data",
     "crates/canary-cli",
-    "migration",
+    "migration", "docker/can-simulator",
 ]
 
 [workspace.dependencies]
