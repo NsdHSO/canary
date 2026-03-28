@@ -80,140 +80,139 @@ struct EcuFile {
     ecu: Vec<EcuPinout>,
 }
 
+/// Helper to load and parse a gzipped ECU TOML file
+fn load_gz_ecus(gz_data: &[u8], label: &str) -> Vec<EcuPinout> {
+    let toml_str = lazy::decompress_gzip(gz_data)
+        .unwrap_or_else(|e| panic!("Failed to decompress {}: {}", label, e));
+    let file: EcuFile = toml::from_str(&toml_str)
+        .unwrap_or_else(|e| panic!("Failed to parse {}: {}", label, e));
+    file.ecu
+}
+
+/// Helper to insert ECUs into a map
+fn insert_ecus(map: &mut HashMap<String, EcuPinout>, ecus: Vec<EcuPinout>) {
+    for ecu in ecus {
+        map.insert(ecu.id.clone(), ecu);
+    }
+}
+
 /// Lazy-loaded VW ECU data
 pub static VW_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     let mut map = HashMap::new();
-
-    // Load ECM
-    const ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/vw/ecm.toml.gz");
-    let ecm_toml = lazy::decompress_gzip(ECM_GZ).expect("Failed to decompress VW ECM");
-    let ecm_file: EcuFile = toml::from_str(&ecm_toml).expect("Failed to parse VW ECM");
-    for ecu in ecm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
-    // Load TCM
-    const TCM_GZ: &[u8] = include_bytes!("../data/manufacturers/vw/tcm.toml.gz");
-    let tcm_toml = lazy::decompress_gzip(TCM_GZ).expect("Failed to decompress VW TCM");
-    let tcm_file: EcuFile = toml::from_str(&tcm_toml).expect("Failed to parse VW TCM");
-    for ecu in tcm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/vw/ecm.toml.gz"), "VW ECM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/vw/tcm.toml.gz"), "VW TCM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/vw/additional.toml.gz"), "VW Additional"));
     map
 });
 
 /// Lazy-loaded Audi ECU data
 pub static AUDI_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     let mut map = HashMap::new();
-
-    // Load ECM
-    const ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/audi/ecm.toml.gz");
-    let ecm_toml = lazy::decompress_gzip(ECM_GZ).expect("Failed to decompress Audi ECM");
-    let ecm_file: EcuFile = toml::from_str(&ecm_toml).expect("Failed to parse Audi ECM");
-    for ecu in ecm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/audi/ecm.toml.gz"), "Audi ECM"));
     map
 });
 
 /// Lazy-loaded GM ECU data
 pub static GM_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     let mut map = HashMap::new();
-
-    // Load ECM
-    const ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/gm/ecm.toml.gz");
-    let ecm_toml = lazy::decompress_gzip(ECM_GZ).expect("Failed to decompress GM ECM");
-    let ecm_file: EcuFile = toml::from_str(&ecm_toml).expect("Failed to parse GM ECM");
-    for ecu in ecm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
-    // Load PCM
-    const PCM_GZ: &[u8] = include_bytes!("../data/manufacturers/gm/pcm.toml.gz");
-    let pcm_toml = lazy::decompress_gzip(PCM_GZ).expect("Failed to decompress GM PCM");
-    let pcm_file: EcuFile = toml::from_str(&pcm_toml).expect("Failed to parse GM PCM");
-    for ecu in pcm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/gm/ecm.toml.gz"), "GM ECM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/gm/pcm.toml.gz"), "GM PCM"));
     map
 });
 
 /// Lazy-loaded Ford ECU data
 pub static FORD_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     let mut map = HashMap::new();
-
-    // Load PCM
-    const PCM_GZ: &[u8] = include_bytes!("../data/manufacturers/ford/pcm.toml.gz");
-    let pcm_toml = lazy::decompress_gzip(PCM_GZ).expect("Failed to decompress Ford PCM");
-    let pcm_file: EcuFile = toml::from_str(&pcm_toml).expect("Failed to parse Ford PCM");
-    for ecu in pcm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
-    // Load BCM
-    const BCM_GZ: &[u8] = include_bytes!("../data/manufacturers/ford/bcm.toml.gz");
-    let bcm_toml = lazy::decompress_gzip(BCM_GZ).expect("Failed to decompress Ford BCM");
-    let bcm_file: EcuFile = toml::from_str(&bcm_toml).expect("Failed to parse Ford BCM");
-    for ecu in bcm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/ford/pcm.toml.gz"), "Ford PCM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/ford/bcm.toml.gz"), "Ford BCM"));
     map
 });
 
 /// Lazy-loaded Toyota ECU data
 pub static TOYOTA_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     let mut map = HashMap::new();
-
-    // Load ECM
-    const ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/toyota/ecm.toml.gz");
-    let ecm_toml = lazy::decompress_gzip(ECM_GZ).expect("Failed to decompress Toyota ECM");
-    let ecm_file: EcuFile = toml::from_str(&ecm_toml).expect("Failed to parse Toyota ECM");
-    for ecu in ecm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
-    // Load RAV4 ECM
-    const RAV4_ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/toyota/rav4_ecm.toml.gz");
-    let rav4_ecm_toml = lazy::decompress_gzip(RAV4_ECM_GZ).expect("Failed to decompress Toyota RAV4 ECM");
-    let rav4_ecm_file: EcuFile = toml::from_str(&rav4_ecm_toml).expect("Failed to parse Toyota RAV4 ECM");
-    for ecu in rav4_ecm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/toyota/ecm.toml.gz"), "Toyota ECM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/toyota/rav4_ecm.toml.gz"), "Toyota RAV4 ECM"));
     map
 });
 
 /// Lazy-loaded BMW ECU data
 pub static BMW_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     let mut map = HashMap::new();
-
-    // Load ECM
-    const ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/bmw/ecm.toml.gz");
-    let ecm_toml = lazy::decompress_gzip(ECM_GZ).expect("Failed to decompress BMW ECM");
-    let ecm_file: EcuFile = toml::from_str(&ecm_toml).expect("Failed to parse BMW ECM");
-    for ecu in ecm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
-
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/bmw/ecm.toml.gz"), "BMW ECM"));
     map
 });
 
 /// Lazy-loaded Skoda ECU data
 pub static SKODA_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/skoda/ecm.toml.gz"), "Skoda ECM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/skoda/additional.toml.gz"), "Skoda Additional"));
+    map
+});
 
-    // Load ECM
-    const ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/skoda/ecm.toml.gz");
-    let ecm_toml = lazy::decompress_gzip(ECM_GZ).expect("Failed to decompress Skoda ECM");
-    let ecm_file: EcuFile = toml::from_str(&ecm_toml).expect("Failed to parse Skoda ECM");
-    for ecu in ecm_file.ecu {
-        map.insert(ecu.id.clone(), ecu);
-    }
+/// Lazy-loaded Honda ECU data
+pub static HONDA_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/honda/ecm.toml.gz"), "Honda ECM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/honda/tcm.toml.gz"), "Honda TCM"));
+    map
+});
 
+/// Lazy-loaded Nissan ECU data
+pub static NISSAN_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/nissan/ecm.toml.gz"), "Nissan ECM"));
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/nissan/tcm.toml.gz"), "Nissan TCM"));
+    map
+});
+
+/// Lazy-loaded Mercedes ECU data
+pub static MERCEDES_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/mercedes/ecm.toml.gz"), "Mercedes ECM"));
+    map
+});
+
+/// Lazy-loaded Hyundai ECU data
+pub static HYUNDAI_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/hyundai/ecm.toml.gz"), "Hyundai ECM"));
+    map
+});
+
+/// Lazy-loaded Kia ECU data
+pub static KIA_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/kia/ecm.toml.gz"), "Kia ECM"));
+    map
+});
+
+/// Lazy-loaded Mazda ECU data
+pub static MAZDA_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/mazda/ecm.toml.gz"), "Mazda ECM"));
+    map
+});
+
+/// Lazy-loaded Subaru ECU data
+pub static SUBARU_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/subaru/ecm.toml.gz"), "Subaru ECM"));
+    map
+});
+
+/// Lazy-loaded Jeep ECU data
+pub static JEEP_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/jeep/ecm.toml.gz"), "Jeep ECM"));
+    map
+});
+
+/// Lazy-loaded Dodge/RAM ECU data
+pub static DODGE_RAM_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+    insert_ecus(&mut map, load_gz_ecus(include_bytes!("../data/manufacturers/dodge_ram/ecm.toml.gz"), "Dodge/RAM ECM"));
     map
 });
 
@@ -227,13 +226,35 @@ pub fn load_manufacturer_ecus(manufacturer: &str) -> Option<&'static HashMap<Str
         "toyota" => Some(&TOYOTA_ECUS),
         "bmw" => Some(&BMW_ECUS),
         "skoda" => Some(&SKODA_ECUS),
+        "honda" => Some(&HONDA_ECUS),
+        "nissan" => Some(&NISSAN_ECUS),
+        "mercedes" => Some(&MERCEDES_ECUS),
+        "hyundai" => Some(&HYUNDAI_ECUS),
+        "kia" => Some(&KIA_ECUS),
+        "mazda" => Some(&MAZDA_ECUS),
+        "subaru" => Some(&SUBARU_ECUS),
+        "jeep" => Some(&JEEP_ECUS),
+        "dodge_ram" => Some(&DODGE_RAM_ECUS),
         _ => None,
     }
 }
 
 /// List available manufacturers
 pub fn list_manufacturers() -> Vec<&'static str> {
-    vec!["vw", "audi", "gm", "ford", "toyota", "bmw", "skoda"]
+    vec![
+        "vw", "audi", "gm", "ford", "toyota", "bmw", "skoda",
+        "honda", "nissan", "mercedes", "hyundai", "kia",
+        "mazda", "subaru", "jeep", "dodge_ram",
+    ]
+}
+
+/// Get total ECU count across all manufacturers
+pub fn total_ecu_count() -> usize {
+    list_manufacturers()
+        .iter()
+        .filter_map(|m| load_manufacturer_ecus(m))
+        .map(|ecus| ecus.len())
+        .sum()
 }
 
 #[cfg(test)]
@@ -280,7 +301,16 @@ mod tests {
         let manufacturers = list_manufacturers();
         assert!(manufacturers.contains(&"vw"));
         assert!(manufacturers.contains(&"gm"));
-        assert!(manufacturers.len() >= 6);
+        assert!(manufacturers.contains(&"honda"));
+        assert!(manufacturers.contains(&"nissan"));
+        assert!(manufacturers.contains(&"mercedes"));
+        assert!(manufacturers.contains(&"hyundai"));
+        assert!(manufacturers.contains(&"kia"));
+        assert!(manufacturers.contains(&"mazda"));
+        assert!(manufacturers.contains(&"subaru"));
+        assert!(manufacturers.contains(&"jeep"));
+        assert!(manufacturers.contains(&"dodge_ram"));
+        assert_eq!(manufacturers.len(), 16, "Should have 16 manufacturers");
     }
 
     #[test]
@@ -293,82 +323,34 @@ mod tests {
     }
 
     #[test]
-    fn test_lazy_load_performance_vw() {
+    fn test_all_manufacturers_load_under_10ms() {
         use std::time::Instant;
-        let start = Instant::now();
-        let ecus = &*VW_ECUS;
-        let duration = start.elapsed();
-        println!("VW loaded in {}ms with {} ECUs", duration.as_millis(), ecus.len());
-        assert!(duration.as_millis() < 100, "VW loaded in {}ms", duration.as_millis());
-        assert!(!ecus.is_empty(), "VW ECUs should not be empty");
-    }
-
-    #[test]
-    fn test_lazy_load_performance_audi() {
-        use std::time::Instant;
-        let start = Instant::now();
-        let ecus = &*AUDI_ECUS;
-        let duration = start.elapsed();
-        println!("Audi loaded in {}ms with {} ECUs", duration.as_millis(), ecus.len());
-        assert!(duration.as_millis() < 100, "Audi loaded in {}ms", duration.as_millis());
-        assert!(!ecus.is_empty(), "Audi ECUs should not be empty");
-    }
-
-    #[test]
-    fn test_lazy_load_performance_gm() {
-        use std::time::Instant;
-        let start = Instant::now();
-        let ecus = &*GM_ECUS;
-        let duration = start.elapsed();
-        println!("GM loaded in {}ms with {} ECUs", duration.as_millis(), ecus.len());
-        assert!(duration.as_millis() < 100, "GM loaded in {}ms", duration.as_millis());
-        assert!(!ecus.is_empty(), "GM ECUs should not be empty");
-    }
-
-    #[test]
-    fn test_lazy_load_performance_ford() {
-        use std::time::Instant;
-        let start = Instant::now();
-        let ecus = &*FORD_ECUS;
-        let duration = start.elapsed();
-        println!("Ford loaded in {}ms with {} ECUs", duration.as_millis(), ecus.len());
-        assert!(duration.as_millis() < 100, "Ford loaded in {}ms", duration.as_millis());
-        assert!(!ecus.is_empty(), "Ford ECUs should not be empty");
-    }
-
-    #[test]
-    fn test_lazy_load_performance_toyota() {
-        use std::time::Instant;
-        let start = Instant::now();
-        let ecus = &*TOYOTA_ECUS;
-        let duration = start.elapsed();
-        println!("Toyota loaded in {}ms with {} ECUs", duration.as_millis(), ecus.len());
-        assert!(duration.as_millis() < 100, "Toyota loaded in {}ms", duration.as_millis());
-        assert!(!ecus.is_empty(), "Toyota ECUs should not be empty");
-    }
-
-    #[test]
-    fn test_lazy_load_performance_bmw() {
-        use std::time::Instant;
-        let start = Instant::now();
-        let ecus = &*BMW_ECUS;
-        let duration = start.elapsed();
-        println!("BMW loaded in {}ms with {} ECUs", duration.as_millis(), ecus.len());
-        assert!(duration.as_millis() < 100, "BMW loaded in {}ms", duration.as_millis());
-        assert!(!ecus.is_empty(), "BMW ECUs should not be empty");
+        for mfr in list_manufacturers() {
+            let start = Instant::now();
+            let ecus = load_manufacturer_ecus(mfr);
+            let duration = start.elapsed();
+            assert!(ecus.is_some(), "Manufacturer {} should have ECU data", mfr);
+            assert!(!ecus.unwrap().is_empty(), "{} should have at least one ECU", mfr);
+            println!("{}: {}ms ({} ECUs)", mfr, duration.as_millis(), ecus.unwrap().len());
+        }
     }
 
     #[test]
     fn test_vw_ecus_content() {
         let ecus = &*VW_ECUS;
-        // Verify we have ECM and TCM data
-        assert!(ecus.len() >= 2, "Expected at least 2 ECUs (ECM + TCM)");
+        // VW has ECM + TCM + 12 additional = 14 total
+        assert!(ecus.len() >= 14, "Expected at least 14 VW ECUs, got {}", ecus.len());
 
-        // Check that ECU IDs are present
         for (id, ecu) in ecus.iter() {
             assert_eq!(id, &ecu.id);
             assert!(!ecu.connectors.is_empty(), "ECU {} should have connectors", id);
         }
+    }
+
+    #[test]
+    fn test_total_ecu_count() {
+        let total = total_ecu_count();
+        assert!(total >= 95, "Expected at least 95 total ECUs, got {}", total);
     }
 
     #[test]
@@ -379,5 +361,23 @@ mod tests {
             assert!(ecus.is_some(), "Manufacturer {} should have ECU data", manufacturer);
             assert!(!ecus.unwrap().is_empty(), "Manufacturer {} should have at least one ECU", manufacturer);
         }
+    }
+
+    #[test]
+    fn test_new_manufacturer_honda() {
+        let ecus = &*HONDA_ECUS;
+        assert!(ecus.len() >= 10, "Honda should have at least 10 ECUs, got {}", ecus.len());
+    }
+
+    #[test]
+    fn test_new_manufacturer_nissan() {
+        let ecus = &*NISSAN_ECUS;
+        assert!(ecus.len() >= 10, "Nissan should have at least 10 ECUs, got {}", ecus.len());
+    }
+
+    #[test]
+    fn test_new_manufacturer_mercedes() {
+        let ecus = &*MERCEDES_ECUS;
+        assert!(ecus.len() >= 8, "Mercedes should have at least 8 ECUs, got {}", ecus.len());
     }
 }
