@@ -14,9 +14,10 @@ pub struct Brand {
     pub parent_id: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct VehicleModel {
-    pub brand_id: String,
+    pub manufacturer: String,
     pub model: String,
     pub years: Vec<u16>,
+    pub engine: Option<String>,
 }
