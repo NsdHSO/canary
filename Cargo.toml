@@ -27,6 +27,8 @@ members = [
     "crates/canary-hardware",
     "crates/canary-uds",
     "crates/canary-cli",
+    "crates/canary-security",
+    "crates/canary-capture",
     "migration", "docker/can-simulator",
 ]
 
