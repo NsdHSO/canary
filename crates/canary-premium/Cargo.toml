@@ -1,0 +1,28 @@
+[package]
+name = "canary-premium"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Premium features: licensing, cloud sync, and marketplace"
+
+[dependencies]
+canary-models = { path = "../canary-models" }
+canary-hardware = { path = "../canary-hardware" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+sha2 = "0.10"
+hmac = "0.12"
+base64 = "0.22"
+aes-gcm = "0.10"
+rand = "0.8"
+uuid = { version = "1", features = ["v4", "serde"] }
+log = "0.4"
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+
+[dev-dependencies]
+tokio = { workspace = true }
+tempfile = "3"
