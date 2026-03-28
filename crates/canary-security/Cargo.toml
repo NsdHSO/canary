@@ -1,0 +1,13 @@
+[package]
+name = "canary-security"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Security access algorithms for automotive ECU diagnostics"
+
+[dependencies]
+thiserror = { workspace = true }
+log = "0.4"
+
+[dev-dependencies]
