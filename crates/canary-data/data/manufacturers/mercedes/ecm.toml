@@ -1,0 +1,297 @@
+# Mercedes-Benz Engine Control Modules
+
+[[ecu]]
+id = "mercedes_c_class_2020_ecm"
+name = "C-Class 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "Bosch"
+part_numbers = ["A2749001200"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "C-Class W205"
+years = [2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "120-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "mercedes_e_class_2021_ecm"
+name = "E-Class 2021 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "Bosch"
+part_numbers = ["A2749002100"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "E-Class W213"
+years = [2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "120-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "mercedes_glc_2020_ecm"
+name = "GLC 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "Bosch"
+part_numbers = ["A2749003000"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "GLC X253"
+years = [2018, 2019, 2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "120-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "mercedes_gle_2020_ecm"
+name = "GLE 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "Bosch"
+part_numbers = ["A1679001100"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "GLE W167"
+years = [2020]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "120-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "mercedes_a_class_2021_ecm"
+name = "A-Class 2021 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "Bosch"
+part_numbers = ["A1779001100"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "A-Class W177"
+years = [2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
+
+[[ecu]]
+id = "mercedes_cla_2020_ecm"
+name = "CLA 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "Bosch"
+part_numbers = ["A1779001200"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "CLA C118"
+years = [2020]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
+
+[[ecu]]
+id = "mercedes_c_class_2021_tcm"
+name = "C-Class 2021 Transmission Control Module"
+module_type = "TCM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "ZF"
+part_numbers = ["A7252701000"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "C-Class W206"
+years = [2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "60-pin ZF"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "mercedes_e_class_2020_bcm"
+name = "E-Class 2020 Body Control Module"
+module_type = "BCM"
+manufacturer_id = "mercedes"
+ecu_manufacturer = "Continental"
+part_numbers = ["A2139005213"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mercedes-Benz"
+model = "E-Class W213"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "80-pin Continental"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "NXP MPC5748G"
