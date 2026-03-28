@@ -1,0 +1,128 @@
+# Skoda Kodiaq Engine Control Module (Bosch MED17.5.25)
+
+[[ecu]]
+id = "skoda_kodiaq_2017_ecm_med1725"
+name = "Kodiaq Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["03L906018QC", "03L906018RD", "03L906018SE"]
+supported_protocols = ["can_2.0b", "kwp2000", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Kodiaq"
+years = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+engine = "2.0L TDI"
+
+# Main 121-pin connector
+[[ecu.connectors]]
+connector_id = "T121"
+connector_type = "121-pin Bosch EV1.4"
+color = "Black"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (KL30)"
+wire_color = "RD"
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Ground (KL31)"
+wire_color = "BR"
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "Ignition Switched (KL15)"
+wire_color = "RD/BK"
+signal_type = "Power"
+
+# CAN Bus
+[[ecu.connectors.pins]]
+pin_number = 20
+signal_name = "CAN High"
+wire_color = "OR/BK"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 21
+signal_name = "CAN Low"
+wire_color = "OR/BR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# K-Line Diagnostics
+[[ecu.connectors.pins]]
+pin_number = 45
+signal_name = "K-Line Diagnostics"
+wire_color = "GN"
+signal_type = "Digital"
+
+# Sensors
+[[ecu.connectors.pins]]
+pin_number = 50
+signal_name = "MAF Sensor Signal"
+wire_color = "GY"
+signal_type = "SensorInput"
+
+[[ecu.connectors.pins]]
+pin_number = 55
+signal_name = "Coolant Temp Sensor"
+wire_color = "BU"
+signal_type = "SensorInput"
+
+[[ecu.connectors.pins]]
+pin_number = 60
+signal_name = "Throttle Position Sensor"
+wire_color = "GY/RD"
+signal_type = "SensorInput"
+
+[[ecu.connectors.pins]]
+pin_number = 65
+signal_name = "Crankshaft Position Sensor"
+wire_color = "GY/BU"
+signal_type = "SensorInput"
+
+# Outputs
+[[ecu.connectors.pins]]
+pin_number = 80
+signal_name = "Injector 1 Control"
+wire_color = "BK/WH"
+signal_type = "ActuatorOutput"
+
+[[ecu.connectors.pins]]
+pin_number = 85
+signal_name = "Fuel Pump Relay"
+wire_color = "RD/BU"
+signal_type = "ActuatorOutput"
+
+[[ecu.connectors.pins]]
+pin_number = 90
+signal_name = "EGR Valve Control"
+wire_color = "BR/WH"
+signal_type = "PWM"
+
+[[ecu.connectors.pins]]
+pin_number = 95
+signal_name = "Turbo Wastegate Control"
+wire_color = "GN/RD"
+signal_type = "PWM"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_max = 16.0
+voltage_nominal = 12.0
+max_current = 25.0
+fuse_rating = 30.0
+
+# Flash memory specs
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+eeprom_size_kb = 64
+cpu = "Infineon TriCore TC1797"
