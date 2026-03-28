@@ -1,0 +1,58 @@
+# Rust build artifacts
+target/
+**/*.rs.bk
+*.pdb
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# CI/CD
+.github/
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# Testing
+.coverage
+tests/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Compressed files
+*.gz
+*.zip
+*.tar
+
+# Lock files (include Cargo.lock in image)
+# Cargo.lock is intentionally NOT ignored for reproducible builds

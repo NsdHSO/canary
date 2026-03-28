@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: canary
+      POSTGRES_USER: canary
+      POSTGRES_PASSWORD: canary_dev
+    volumes:
+      - canary_postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"  # Use different host port to avoid conflicts
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  can-simulator:
+    build:
+      context: ./docker/can-simulator
+    privileged: true  # Required for vcan0
+    volumes:
+      - /lib/modules:/lib/modules:ro
+    command: /app/run-simulator.sh
+
+  canary-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    depends_on:
+      - postgres
+      - redis
+      - can-simulator
+    environment:
+      DATABASE_URL: postgresql://canary:canary_dev@postgres/canary
+      RUST_LOG: debug
+    volumes:
+      - .:/workspace
+      - cargo-cache:/usr/local/cargo
+    network_mode: service:can-simulator  # Share CAN network
+    command: cargo watch -x test
+
+volumes:
+  canary_postgres_data:
+  cargo-cache:

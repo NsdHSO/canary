@@ -1,0 +1,16 @@
+FROM rust:latest
+
+# Install system dependencies for CAN development
+RUN apt-get update && apt-get install -y \
+    can-utils \
+    iproute2 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install cargo-watch for hot-reload development
+RUN cargo install cargo-watch
+
+# Set working directory
+WORKDIR /workspace
+
+# Default command (overridden by docker-compose)
+CMD ["cargo", "watch", "-x", "test"]
