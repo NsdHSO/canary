@@ -30,3 +30,6 @@ docs/_build/
 
 # Testing
 .coverage
+
+# Generated compressed data files
+*.toml.gz
