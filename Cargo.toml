@@ -1,3 +1,18 @@
+[package]
+name = "canary-workspace"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Workspace integration tests
+[[test]]
+name = "phase1_integration_test"
+path = "tests/phase1_integration_test.rs"
+
+[dependencies]
+canary-core = { path = "crates/canary-core" }
+canary-models = { path = "crates/canary-models" }
+
 [workspace]
 resolver = "2"
 members = [
