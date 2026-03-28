@@ -1,0 +1,189 @@
+# Nissan Additional ECUs
+
+[[ecu]]
+id = "nissan_pathfinder_2020_ecm"
+name = "Pathfinder 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Hitachi"
+part_numbers = ["BEM430-600A1"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Pathfinder"
+years = [2020]
+engine = "3.5L VQ35DD"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "112-pin Hitachi"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 22.0
+fuse_rating = 25.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "nissan_murano_2019_ecm"
+name = "Murano 2019 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Hitachi"
+part_numbers = ["BEM440-200A1"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Murano"
+years = [2019]
+engine = "3.5L VQ35DE"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "112-pin Hitachi"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 22.0
+fuse_rating = 25.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "nissan_altima_2020_tcm"
+name = "Altima 2020 Transmission Control Module"
+module_type = "TCM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "JATCO"
+part_numbers = ["31036-6CA0A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Altima"
+years = [2020, 2021, 2022]
+engine = "CVT"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "40-pin JATCO"
+color = "Gray"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 8
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 10.0
+fuse_rating = 15.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas V850"
+
+[[ecu]]
+id = "nissan_rogue_2021_bcm"
+name = "Rogue 2021 Body Control Module"
+module_type = "BCM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Calsonic Kansei"
+part_numbers = ["284B1-6MA1A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Rogue"
+years = [2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "60-pin Calsonic"
+color = "Blue"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 8
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 12.0
+fuse_rating = 15.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "Renesas RL78"
+
+[[ecu]]
+id = "nissan_sentra_2021_abs"
+name = "Sentra 2021 ABS Module"
+module_type = "ABS"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Bosch"
+part_numbers = ["47660-6LA0A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Sentra"
+years = [2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "32-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 6
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 30.0
+fuse_rating = 40.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "Infineon TC1766"

@@ -1,0 +1,191 @@
+# Nissan Engine Control Modules
+
+[[ecu]]
+id = "nissan_altima_2019_ecm"
+name = "Altima 2019 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Hitachi"
+part_numbers = ["BEM400-300A2", "NEC010-634"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Altima"
+years = [2016, 2017, 2018, 2019, 2020, 2021, 2022]
+engine = "2.5L QR25DE"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "112-pin Hitachi"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas SH7059"
+
+[[ecu]]
+id = "nissan_sentra_2019_ecm"
+name = "Sentra 2019 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Hitachi"
+part_numbers = ["BEM401-100A1"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Sentra"
+years = [2017, 2018, 2019, 2020, 2021]
+engine = "1.8L MRA8DE"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "112-pin Hitachi"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 15.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas SH7059"
+
+[[ecu]]
+id = "nissan_rogue_2020_ecm"
+name = "Rogue 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Hitachi"
+part_numbers = ["BEM410-300A1"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Rogue"
+years = [2018, 2019, 2020, 2021, 2022]
+engine = "2.5L QR25DE"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "112-pin Hitachi"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "nissan_maxima_2021_ecm"
+name = "Maxima 2021 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Hitachi"
+part_numbers = ["BEM420-500A1"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Maxima"
+years = [2021]
+engine = "3.5L VQ35DE"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "112-pin Hitachi"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 22.0
+fuse_rating = 25.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "nissan_leaf_2020_ecm"
+name = "Leaf 2020 Motor Control Module"
+module_type = "ECM"
+manufacturer_id = "nissan"
+ecu_manufacturer = "Hitachi"
+part_numbers = ["295F0-5SA0A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Nissan"
+model = "Leaf"
+years = [2018, 2019, 2020, 2021, 2022]
+engine = "Electric Motor 147hp"
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Hitachi"
+color = "White"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "HV Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 25.0
+fuse_rating = 30.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
