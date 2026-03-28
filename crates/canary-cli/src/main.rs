@@ -5,7 +5,7 @@ use canary_core::{
     ServiceProcedureService,
 };
 use clap::{Parser, Subcommand};
-use commands::{ecu, module};
+use commands::{adapter, can, ecu, live, module};
 
 #[derive(Parser)]
 #[command(name = "canary")]
@@ -23,6 +23,15 @@ enum Commands {
 
     /// Module-specific ECU commands
     Module(module::ModuleArgs),
+
+    /// Hardware adapter management (connect, test, scan)
+    Adapter(adapter::AdapterArgs),
+
+    /// Live diagnostics (DTCs, monitoring, sessions)
+    Live(live::LiveArgs),
+
+    /// Raw CAN frame send/receive
+    Can(can::CanArgs),
 
     /// Lookup OBD-II pinout information
     Pinout {
@@ -75,6 +84,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     match cli.command {
         Commands::Ecu(args) => ecu::handle_ecu(args)?,
         Commands::Module(args) => module::handle_module(args)?,
+        Commands::Adapter(args) => adapter::handle_adapter(args).await?,
+        Commands::Live(args) => live::handle_live(args).await?,
+        Commands::Can(args) => can::handle_can(args).await?,
         Commands::Pinout { pin } => handle_pinout(pin)?,
         Commands::Decode { bytes } => handle_decode(bytes)?,
         Commands::Dtc { code, search } => handle_dtc(&code, search)?,
