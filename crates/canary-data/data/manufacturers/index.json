@@ -1,0 +1,47 @@
+{
+  "manufacturers": [
+    {
+      "id": "vw",
+      "name": "Volkswagen",
+      "ecu_count": 2,
+      "data_files": ["ecm.toml.gz", "tcm.toml.gz"]
+    },
+    {
+      "id": "audi",
+      "name": "Audi",
+      "ecu_count": 1,
+      "data_files": ["ecm.toml.gz"]
+    },
+    {
+      "id": "gm",
+      "name": "General Motors",
+      "ecu_count": 2,
+      "data_files": ["ecm.toml.gz", "pcm.toml.gz"]
+    },
+    {
+      "id": "ford",
+      "name": "Ford Motor Company",
+      "ecu_count": 2,
+      "data_files": ["pcm.toml.gz", "bcm.toml.gz"]
+    },
+    {
+      "id": "toyota",
+      "name": "Toyota",
+      "ecu_count": 2,
+      "data_files": ["ecm.toml.gz", "rav4_ecm.toml.gz"]
+    },
+    {
+      "id": "bmw",
+      "name": "BMW",
+      "ecu_count": 1,
+      "data_files": ["ecm.toml.gz"]
+    },
+    {
+      "id": "honda",
+      "name": "Honda",
+      "ecu_count": 0,
+      "data_files": ["ecm.toml.gz"]
+    }
+  ],
+  "last_updated": "2026-03-27T00:00:00Z"
+}

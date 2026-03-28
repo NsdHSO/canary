@@ -1,0 +1,4 @@
+# Test file for build script
+id = "test_ecu"
+module_type = "ECM"
+manufacturer_id = "vw"

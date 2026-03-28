@@ -1,0 +1,7 @@
+{
+  "manufacturer_id": "audi",
+  "name": "Audi",
+  "ecu_count": 1,
+  "last_updated": "2026-03-27T00:00:00Z",
+  "data_files": ["ecm.toml"]
+}
