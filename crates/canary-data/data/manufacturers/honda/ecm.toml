@@ -1,0 +1,266 @@
+# Honda Engine Control Modules
+
+[[ecu]]
+id = "honda_civic_2018_ecm"
+name = "Civic 2018 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-5BA-A73", "37820-5BA-A74"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Civic"
+years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+engine = "1.5L Turbo"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "104-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+wire_color = "WHT/BLU"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Ground (GND)"
+wire_color = "BLK"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+wire_color = "BLU/BLK"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 11
+signal_name = "CAN Low"
+wire_color = "BLU/WHT"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 20
+signal_name = "MAP Sensor"
+wire_color = "GRN/WHT"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Manifold Absolute Pressure Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 25
+signal_name = "Coolant Temperature"
+wire_color = "RED/WHT"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Engine Coolant Temperature Sensor"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+# Honda Accord ECM
+[[ecu]]
+id = "honda_accord_2020_ecm"
+name = "Accord 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-6A0-A56", "37820-6A0-A57"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Accord"
+years = [2016, 2017, 2018, 2019, 2020, 2021, 2022]
+engine = "1.5L Turbo"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "104-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+wire_color = "WHT/BLU"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Ground (GND)"
+wire_color = "BLK"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+wire_color = "BLU/BLK"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+# Honda CR-V ECM
+[[ecu]]
+id = "honda_crv_2019_ecm"
+name = "CR-V 2019 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-5PH-A14"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "CR-V"
+years = [2017, 2018, 2019, 2020, 2021]
+engine = "1.5L Turbo"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "104-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+# Honda Pilot ECM
+[[ecu]]
+id = "honda_pilot_2021_ecm"
+name = "Pilot 2021 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-RLV-A12"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Pilot"
+years = [2021]
+engine = "3.5L V6"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "104-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 22.0
+fuse_rating = 25.0
+
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+# Honda Fit ECM
+[[ecu]]
+id = "honda_fit_2017_ecm"
+name = "Fit 2017 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-5R7-A53"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Fit"
+years = [2017]
+engine = "1.5L i-VTEC"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "80-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 15.0
+fuse_rating = 20.0
+
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas SH72544R"

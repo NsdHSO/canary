@@ -1,0 +1,221 @@
+# Honda Transmission/Body Control Modules
+
+[[ecu]]
+id = "honda_odyssey_2020_ecm"
+name = "Odyssey 2020 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-RLY-A12"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Odyssey"
+years = [2020]
+engine = "3.5L V6"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "104-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 22.0
+fuse_rating = 25.0
+
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "honda_hrv_2019_ecm"
+name = "HR-V 2019 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-5LA-A12"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "HR-V"
+years = [2019]
+engine = "1.8L i-VTEC"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "80-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 15.0
+fuse_rating = 20.0
+
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas SH72544R"
+
+[[ecu]]
+id = "honda_ridgeline_2021_ecm"
+name = "Ridgeline 2021 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["37820-RLE-A12"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Ridgeline"
+years = [2021]
+engine = "3.5L V6"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "104-pin Keihin"
+color = "Black"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power (B+)"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 22.0
+fuse_rating = 25.0
+
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "honda_civic_2020_tcm"
+name = "Civic 2020 Transmission Control Module"
+module_type = "TCM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["28100-6A7-003"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Civic"
+years = [2020, 2021, 2022]
+engine = "CVT"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "40-pin Keihin"
+color = "Gray"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 5
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 10.0
+fuse_rating = 15.0
+
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "honda_accord_2020_tcm"
+name = "Accord 2020 Transmission Control Module"
+module_type = "TCM"
+manufacturer_id = "honda"
+ecu_manufacturer = "Keihin"
+part_numbers = ["28100-6B2-003"]
+supported_protocols = ["can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Honda"
+model = "Accord"
+years = [2020, 2021, 2022]
+engine = "10-Speed AT"
+
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "40-pin Keihin"
+color = "Gray"
+
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 5
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 10.0
+fuse_rating = 15.0
+
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas RH850"
