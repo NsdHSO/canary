@@ -1,10 +1,18 @@
 use canary_hardware::CanAdapter;
 
 use crate::error::UdsError;
-use crate::services::{read_data, read_dtc, session_control};
+use crate::services::{read_data, read_dtc, session_control, write_data, io_control, routine, download, security_access};
 use crate::services::session_control::SessionType;
 use crate::services::read_dtc::{DtcSubFunction, ReadDtcResponse};
 use crate::services::read_data::ReadDataResponse;
+use crate::services::write_data::WriteDataResponse;
+use crate::services::io_control::{IoControlParameter, IoControlResponse};
+use crate::services::routine::RoutineControlResponse;
+use crate::services::download::{
+    DataFormatIdentifier, RequestDownloadResponse, RequestUploadResponse,
+    TransferDataResponse, TransferExitResponse,
+};
+use crate::services::security_access::{SeedResponse, KeyResponse};
 
 /// Default response timeout in milliseconds
 const DEFAULT_TIMEOUT_MS: u64 = 2000;
@@ -193,6 +201,167 @@ impl UdsSession {
             }
         }
         Ok(results)
+    }
+
+    // ===== Phase 3: New UDS Services =====
+
+    /// Service 0x27: Request security seed
+    pub async fn request_seed(&self, access_level: u8) -> Result<SeedResponse, UdsError> {
+        let request = security_access::build_seed_request(access_level);
+        let response = self.send_request(&request).await?;
+        security_access::parse_seed_response(&response)
+    }
+
+    /// Service 0x27: Send security key
+    pub async fn send_key(
+        &mut self,
+        access_level: u8,
+        key: &[u8],
+    ) -> Result<KeyResponse, UdsError> {
+        let request = security_access::build_key_response(access_level, key);
+        let response = self.send_request(&request).await?;
+        let result = security_access::parse_key_response(&response)?;
+        self.security_level = access_level;
+        Ok(result)
+    }
+
+    /// Service 0x2E: Write data by identifier
+    pub async fn write_data_by_id(
+        &self,
+        did: u16,
+        data: &[u8],
+    ) -> Result<WriteDataResponse, UdsError> {
+        let request = write_data::build_request(did, data);
+        let response = self.send_request(&request).await?;
+        write_data::parse_response(&response)
+    }
+
+    /// Service 0x2F: I/O control by identifier
+    pub async fn io_control(
+        &self,
+        did: u16,
+        control_param: IoControlParameter,
+        control_state: &[u8],
+    ) -> Result<IoControlResponse, UdsError> {
+        let request = io_control::build_request(did, control_param, control_state);
+        let response = self.send_request(&request).await?;
+        io_control::parse_response(&response)
+    }
+
+    /// Service 0x2F: Return I/O control to ECU
+    pub async fn io_return_control(&self, did: u16) -> Result<IoControlResponse, UdsError> {
+        let request = io_control::build_return_control(did);
+        let response = self.send_request(&request).await?;
+        io_control::parse_response(&response)
+    }
+
+    /// Service 0x31: Start a routine
+    pub async fn start_routine(
+        &self,
+        routine_id: u16,
+        option_record: &[u8],
+    ) -> Result<RoutineControlResponse, UdsError> {
+        let request = routine::build_start_routine(routine_id, option_record);
+        let response = self.send_request(&request).await?;
+        routine::parse_response(&response)
+    }
+
+    /// Service 0x31: Stop a routine
+    pub async fn stop_routine(&self, routine_id: u16) -> Result<RoutineControlResponse, UdsError> {
+        let request = routine::build_stop_routine(routine_id);
+        let response = self.send_request(&request).await?;
+        routine::parse_response(&response)
+    }
+
+    /// Service 0x31: Request routine results
+    pub async fn request_routine_results(
+        &self,
+        routine_id: u16,
+    ) -> Result<RoutineControlResponse, UdsError> {
+        let request = routine::build_request_results(routine_id);
+        let response = self.send_request(&request).await?;
+        routine::parse_response(&response)
+    }
+
+    /// Service 0x34: Request download (tester -> ECU)
+    pub async fn request_download(
+        &self,
+        memory_address: u32,
+        memory_size: u32,
+    ) -> Result<RequestDownloadResponse, UdsError> {
+        let request = download::build_request_download(
+            DataFormatIdentifier::none(),
+            memory_address,
+            memory_size,
+        );
+        let response = self.send_request(&request).await?;
+        download::parse_request_download_response(&response)
+    }
+
+    /// Service 0x35: Request upload (ECU -> tester)
+    pub async fn request_upload(
+        &self,
+        memory_address: u32,
+        memory_size: u32,
+    ) -> Result<RequestUploadResponse, UdsError> {
+        let request = download::build_request_upload(
+            DataFormatIdentifier::none(),
+            memory_address,
+            memory_size,
+        );
+        let response = self.send_request(&request).await?;
+        download::parse_request_upload_response(&response)
+    }
+
+    /// Service 0x36: Transfer data block
+    pub async fn transfer_data(
+        &self,
+        block_sequence_counter: u8,
+        data: &[u8],
+    ) -> Result<TransferDataResponse, UdsError> {
+        let request = download::build_transfer_data(block_sequence_counter, data);
+        let response = self.send_request(&request).await?;
+        download::parse_transfer_data_response(&response)
+    }
+
+    /// Service 0x37: Request transfer exit
+    pub async fn request_transfer_exit(&self) -> Result<TransferExitResponse, UdsError> {
+        let request = download::build_transfer_exit(&[]);
+        let response = self.send_request(&request).await?;
+        download::parse_transfer_exit_response(&response)
+    }
+
+    /// High-level: Download memory from ECU (handles block sequencing)
+    pub async fn download_memory(
+        &self,
+        memory_address: u32,
+        data: &[u8],
+    ) -> Result<(), UdsError> {
+        // Request download
+        let dl_resp = self.request_download(memory_address, data.len() as u32).await?;
+        let block_size = dl_resp.max_block_length as usize;
+        let effective_block_size = if block_size > 2 { block_size - 2 } else { block_size };
+
+        // Transfer data blocks
+        let mut block_counter: u8 = 1;
+        let mut offset = 0;
+
+        while offset < data.len() {
+            let end = std::cmp::min(offset + effective_block_size, data.len());
+            let block = &data[offset..end];
+            self.transfer_data(block_counter, block).await?;
+
+            block_counter = block_counter.wrapping_add(1);
+            if block_counter == 0 {
+                block_counter = 1; // Skip 0 per ISO 14229
+            }
+            offset = end;
+        }
+
+        // Request transfer exit
+        self.request_transfer_exit().await?;
+
+        Ok(())
     }
 
     /// Service 0x14: Clear DTCs
