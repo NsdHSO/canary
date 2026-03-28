@@ -202,6 +202,21 @@ pub static BMW_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
     map
 });
 
+/// Lazy-loaded Skoda ECU data
+pub static SKODA_ECUS: Lazy<HashMap<String, EcuPinout>> = Lazy::new(|| {
+    let mut map = HashMap::new();
+
+    // Load ECM
+    const ECM_GZ: &[u8] = include_bytes!("../data/manufacturers/skoda/ecm.toml.gz");
+    let ecm_toml = lazy::decompress_gzip(ECM_GZ).expect("Failed to decompress Skoda ECM");
+    let ecm_file: EcuFile = toml::from_str(&ecm_toml).expect("Failed to parse Skoda ECM");
+    for ecu in ecm_file.ecu {
+        map.insert(ecu.id.clone(), ecu);
+    }
+
+    map
+});
+
 /// Load manufacturer ECU data
 pub fn load_manufacturer_ecus(manufacturer: &str) -> Option<&'static HashMap<String, EcuPinout>> {
     match manufacturer {
@@ -211,13 +226,14 @@ pub fn load_manufacturer_ecus(manufacturer: &str) -> Option<&'static HashMap<Str
         "ford" => Some(&FORD_ECUS),
         "toyota" => Some(&TOYOTA_ECUS),
         "bmw" => Some(&BMW_ECUS),
+        "skoda" => Some(&SKODA_ECUS),
         _ => None,
     }
 }
 
 /// List available manufacturers
 pub fn list_manufacturers() -> Vec<&'static str> {
-    vec!["vw", "audi", "gm", "ford", "toyota", "bmw"]
+    vec!["vw", "audi", "gm", "ford", "toyota", "bmw", "skoda"]
 }
 
 #[cfg(test)]
