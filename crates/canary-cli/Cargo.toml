@@ -11,5 +11,7 @@ path = "src/main.rs"
 
 [dependencies]
 canary-core = { path = "../canary-core" }
+canary-hardware = { path = "../canary-hardware" }
+canary-uds = { path = "../canary-uds" }
 clap = { version = "4.5", features = ["derive"] }
 tokio = { workspace = true }
