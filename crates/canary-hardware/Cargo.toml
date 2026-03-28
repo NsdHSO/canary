@@ -1,0 +1,16 @@
+[package]
+name = "canary-hardware"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Hardware adapter abstraction for CAN bus interfaces"
+
+[dependencies]
+tokio = { workspace = true }
+async-trait = "0.1"
+thiserror = { workspace = true }
+log = "0.4"
+
+[dev-dependencies]
+tokio = { workspace = true }
