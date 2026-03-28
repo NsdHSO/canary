@@ -1,6 +1,6 @@
 use canary_data::PINOUTS;
 use canary_models::{
-    embedded::ConnectorPinout,
+    embedded::{ConnectorPinout, EcuPinout, ModuleType},
     Result,
     CanaryError,
 };
@@ -48,6 +48,50 @@ impl PinoutService {
         PINOUTS
             .get(id)
             .ok_or_else(|| CanaryError::NotFound(format!("Pinout {}", id)))
+    }
+
+    /// List available manufacturers
+    pub fn list_manufacturers() -> Vec<&'static str> {
+        canary_data::list_manufacturers()
+    }
+
+    /// Get ECUs by manufacturer
+    pub fn get_ecus_by_manufacturer(manufacturer: &str) -> Result<Vec<&'static EcuPinout>> {
+        if let Some(ecus) = canary_data::load_manufacturer_ecus(manufacturer) {
+            Ok(ecus.values().collect())
+        } else {
+            Err(CanaryError::NotFound(format!("Manufacturer: {}", manufacturer)))
+        }
+    }
+
+    /// Get ECUs by module type (across all manufacturers)
+    pub fn get_ecus_by_module_type(module_type: ModuleType) -> Result<Vec<&'static EcuPinout>> {
+        let mut result = Vec::new();
+
+        for manufacturer in Self::list_manufacturers() {
+            if let Some(ecus) = canary_data::load_manufacturer_ecus(manufacturer) {
+                result.extend(
+                    ecus.values()
+                        .filter(|ecu| ecu.module_type == module_type)
+                );
+            }
+        }
+
+        Ok(result)
+    }
+
+    /// Get specific ECU by ID
+    pub fn get_ecu_by_id(id: &str) -> Result<&'static EcuPinout> {
+        // Extract manufacturer from ID (format: mfr_model_year_module)
+        let manufacturer = id.split('_').next()
+            .ok_or_else(|| CanaryError::NotFound(format!("Invalid ECU ID: {}", id)))?;
+
+        if let Some(ecus) = canary_data::load_manufacturer_ecus(manufacturer) {
+            ecus.get(id)
+                .ok_or_else(|| CanaryError::NotFound(format!("ECU ID: {}", id)))
+        } else {
+            Err(CanaryError::NotFound(format!("Manufacturer: {}", manufacturer)))
+        }
     }
 }
 
