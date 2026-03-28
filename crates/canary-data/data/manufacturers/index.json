@@ -37,11 +37,17 @@
       "data_files": ["ecm.toml.gz"]
     },
     {
+      "id": "skoda",
+      "name": "Skoda",
+      "ecu_count": 1,
+      "data_files": ["ecm.toml.gz"]
+    },
+    {
       "id": "honda",
       "name": "Honda",
       "ecu_count": 0,
       "data_files": ["ecm.toml.gz"]
     }
   ],
-  "last_updated": "2026-03-27T00:00:00Z"
+  "last_updated": "2026-03-28T00:00:00Z"
 }
