@@ -1,16 +1,6 @@
-#!/bin/sh
-set -e
-
-echo "Setting up virtual CAN interface (vcan0)..."
-
-# Load the vcan kernel module
+#!/bin/bash
 modprobe vcan
-
-# Create virtual CAN interface
 ip link add dev vcan0 type vcan
-
-# Bring up the interface
 ip link set up vcan0
-
-echo "vcan0 interface created and activated"
-ip link show vcan0
+echo "✅ Virtual CAN interface vcan0 created"
+candump vcan0 &  # Monitor CAN traffic
