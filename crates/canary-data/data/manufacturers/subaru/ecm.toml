@@ -1,0 +1,223 @@
+# Subaru Engine Control Modules
+
+[[ecu]]
+id = "subaru_impreza_2020_ecm"
+name = "Impreza 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "subaru"
+ecu_manufacturer = "Denso"
+part_numbers = ["22765-AJ380"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Subaru"
+model = "Impreza"
+years = [2017, 2018, 2019, 2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas SH7059"
+
+[[ecu]]
+id = "subaru_outback_2021_ecm"
+name = "Outback 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "subaru"
+ecu_manufacturer = "Denso"
+part_numbers = ["22765-AK180"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Subaru"
+model = "Outback"
+years = [2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "subaru_forester_2021_ecm"
+name = "Forester 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "subaru"
+ecu_manufacturer = "Denso"
+part_numbers = ["22765-AK280"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Subaru"
+model = "Forester"
+years = [2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "subaru_crosstrek_2021_ecm"
+name = "Crosstrek 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "subaru"
+ecu_manufacturer = "Denso"
+part_numbers = ["22765-AK380"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Subaru"
+model = "Crosstrek"
+years = [2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "subaru_outback_2020_tcm"
+name = "Outback 2020 TCM"
+module_type = "TCM"
+manufacturer_id = "subaru"
+ecu_manufacturer = "JATCO"
+part_numbers = ["31036-AK100"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Subaru"
+model = "Outback"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin JATCO"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas V850"
+
+[[ecu]]
+id = "subaru_forester_2020_abs"
+name = "Forester 2020 ABS"
+module_type = "ABS"
+manufacturer_id = "subaru"
+ecu_manufacturer = "Bosch"
+part_numbers = ["27536-SJ000"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Subaru"
+model = "Forester"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "Infineon TC1766"
