@@ -27,6 +27,7 @@ Thumbs.db
 
 # Documentation build
 docs/_build/
+docs/plans/teammates/
 
 # Testing
 .coverage
