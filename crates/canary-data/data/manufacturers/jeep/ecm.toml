@@ -1,0 +1,149 @@
+# Jeep Engine Control Modules
+
+[[ecu]]
+id = "jeep_wrangler_2021_ecm"
+name = "Wrangler 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "jeep"
+ecu_manufacturer = "Continental"
+part_numbers = ["68496916AA"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Jeep"
+model = "Wrangler JL"
+years = [2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Continental"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "jeep_grand_cherokee_2021_ecm"
+name = "Grand Cherokee 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "jeep"
+ecu_manufacturer = "Continental"
+part_numbers = ["68536421AA"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Jeep"
+model = "Grand Cherokee WL"
+years = [2019, 2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Continental"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore AURIX"
+
+[[ecu]]
+id = "jeep_cherokee_2020_ecm"
+name = "Cherokee 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "jeep"
+ecu_manufacturer = "Continental"
+part_numbers = ["68434758AA"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Jeep"
+model = "Cherokee KL"
+years = [2020]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Continental"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "jeep_wrangler_2020_tcm"
+name = "Wrangler 2020 TCM"
+module_type = "TCM"
+manufacturer_id = "jeep"
+ecu_manufacturer = "ZF"
+part_numbers = ["68445456AA"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Jeep"
+model = "Wrangler JL"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin ZF"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas RH850"
