@@ -24,7 +24,7 @@ impl ConnectorPinout {
         self.vehicle_models
             .iter()
             .any(|vm| {
-                vm.brand_id == manufacturer
+                vm.manufacturer == manufacturer
                     && vm.model == model
                     && vm.years.contains(&year)
             })
