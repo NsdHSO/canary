@@ -1,8 +1,11 @@
+mod commands;
+
 use canary_core::{
     embedded::DtcSystem, DtcService, PinoutService, ProtocolDecoder, ProtocolFactory,
     ServiceProcedureService,
 };
 use clap::{Parser, Subcommand};
+use commands::{ecu, module};
 
 #[derive(Parser)]
 #[command(name = "canary")]
@@ -15,6 +18,12 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    /// ECU pinout and information commands
+    Ecu(ecu::EcuArgs),
+
+    /// Module-specific ECU commands
+    Module(module::ModuleArgs),
+
     /// Lookup OBD-II pinout information
     Pinout {
         /// Show specific pin number (1-16)
@@ -64,6 +73,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     canary_core::initialize(None).await?;
 
     match cli.command {
+        Commands::Ecu(args) => ecu::handle_ecu(args)?,
+        Commands::Module(args) => module::handle_module(args)?,
         Commands::Pinout { pin } => handle_pinout(pin)?,
         Commands::Decode { bytes } => handle_decode(bytes)?,
         Commands::Dtc { code, search } => handle_dtc(&code, search)?,
