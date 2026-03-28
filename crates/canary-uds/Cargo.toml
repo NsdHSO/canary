@@ -1,0 +1,16 @@
+[package]
+name = "canary-uds"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "UDS (Unified Diagnostic Services) protocol implementation"
+
+[dependencies]
+canary-hardware = { path = "../canary-hardware" }
+tokio = { workspace = true }
+thiserror = { workspace = true }
+log = "0.4"
+
+[dev-dependencies]
+tokio = { workspace = true }
