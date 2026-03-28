@@ -1,0 +1,223 @@
+# Mazda Engine Control Modules
+
+[[ecu]]
+id = "mazda_mazda3_2020_ecm"
+name = "Mazda3 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "mazda"
+ecu_manufacturer = "Denso"
+part_numbers = ["PE7G-18-881A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mazda"
+model = "Mazda3"
+years = [2017, 2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "mazda_mazda6_2020_ecm"
+name = "Mazda6 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "mazda"
+ecu_manufacturer = "Denso"
+part_numbers = ["PY8W-18-881A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mazda"
+model = "Mazda6"
+years = [2018, 2019, 2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "mazda_cx5_2021_ecm"
+name = "CX-5 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "mazda"
+ecu_manufacturer = "Denso"
+part_numbers = ["PE7G-18-882A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mazda"
+model = "CX-5"
+years = [2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "mazda_cx9_2020_ecm"
+name = "CX-9 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "mazda"
+ecu_manufacturer = "Denso"
+part_numbers = ["PY8W-18-882A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mazda"
+model = "CX-9"
+years = [2020]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "mazda_mazda3_2021_tcm"
+name = "Mazda3 2021 TCM"
+module_type = "TCM"
+manufacturer_id = "mazda"
+ecu_manufacturer = "Aisin"
+part_numbers = ["FW6A-EL"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mazda"
+model = "Mazda3"
+years = [2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Aisin"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas V850"
+
+[[ecu]]
+id = "mazda_cx5_2020_bcm"
+name = "CX-5 2020 BCM"
+module_type = "BCM"
+manufacturer_id = "mazda"
+ecu_manufacturer = "Denso"
+part_numbers = ["KD45-67-560A"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Mazda"
+model = "CX-5"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Denso"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "NXP MPC5748G"
