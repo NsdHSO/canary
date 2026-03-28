@@ -1,0 +1,167 @@
+# BMW E90 Engine Control Module (Bosch DME MSV80)
+
+[[ecu]]
+id = "bmw_e90_335i_2010_ecm_msv80"
+name = "E90 335i Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "bmw"
+ecu_manufacturer = "Bosch"
+part_numbers = ["7604549-02", "7604549-03", "7604549-04"]
+supported_protocols = ["can_2.0b", "kwp2000", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "BMW"
+model = "3 Series E90"
+years = [2007, 2008, 2009, 2010, 2011, 2012, 2013]
+engine = "3.0L N54 Twin Turbo"
+
+# Main 134-pin connector
+[[ecu.connectors]]
+connector_id = "X60002"
+connector_type = "134-pin Bosch DME"
+color = "Black"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "KL30 Battery Power"
+wire_color = "RT"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Ground"
+wire_color = "BR"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "KL87 Ignition"
+wire_color = "RT/WS"
+voltage = 12.0
+signal_type = "Power"
+
+# PT-CAN (Powertrain CAN)
+[[ecu.connectors.pins]]
+pin_number = 18
+signal_name = "PT-CAN High"
+wire_color = "OR/SW"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 19
+signal_name = "PT-CAN Low"
+wire_color = "OR/BR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# D-CAN (Diagnostic CAN)
+[[ecu.connectors.pins]]
+pin_number = 20
+signal_name = "D-CAN High"
+wire_color = "GE/SW"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 21
+signal_name = "D-CAN Low"
+wire_color = "GE/BR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# Twin turbo sensors
+[[ecu.connectors.pins]]
+pin_number = 30
+signal_name = "Boost Pressure Sensor"
+wire_color = "GR/RT"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "Charge Pressure Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 35
+signal_name = "Intake Air Temp"
+wire_color = "GR/WS"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Intake Air Temperature Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 42
+signal_name = "Oil Pressure Sensor"
+wire_color = "BL/RT"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "Engine Oil Pressure Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 48
+signal_name = "Crankshaft Position"
+wire_color = "GN/WS"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Crankshaft Position Sensor"
+
+# High-pressure direct injection
+[[ecu.connectors.pins]]
+pin_number = 60
+signal_name = "Injector 1 Piezo"
+wire_color = "VI/SW"
+voltage = 80.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Piezo Injector Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 70
+signal_name = "High Pressure Fuel Pump"
+wire_color = "BR/GN"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "High Pressure Fuel Pump"
+
+# Twin turbo actuators
+[[ecu.connectors.pins]]
+pin_number = 80
+signal_name = "Turbo 1 Wastegate"
+wire_color = "GR/SW"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Turbocharger 1 Wastegate"
+
+[[ecu.connectors.pins]]
+pin_number = 85
+signal_name = "Turbo 2 Wastegate"
+wire_color = "GR/VI"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Turbocharger 2 Wastegate"
+
+[[ecu.connectors.pins]]
+pin_number = 95
+signal_name = "VANOS Intake"
+wire_color = "BL/WS"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "VANOS Intake Solenoid"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 35.0
+power_max = 420.0
+fuse_rating = 40.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 6144
+ram_size_kb = 896
+eeprom_size_kb = 96
+cpu = "Infineon TriCore TC1796"
+
+# Supported protocols

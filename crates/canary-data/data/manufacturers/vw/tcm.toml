@@ -1,0 +1,143 @@
+# VW Passat B7 Transmission Control Module (Aisin 09G/TF60-SC)
+
+[[ecu]]
+id = "vw_passat_b7_2014_tcm_09g"
+name = "Passat B7 Transmission Control Module"
+module_type = "TCM"
+manufacturer_id = "vw"
+ecu_manufacturer = "Continental"
+part_numbers = ["09G927750MN", "09G927750MQ", "09G927750MX"]
+supported_protocols = ["can_2.0b", "kwp2000", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Volkswagen"
+model = "Passat B7"
+years = [2012, 2013, 2014, 2015]
+engine = "2.5L I5"
+
+# Main 88-pin connector
+[[ecu.connectors]]
+connector_id = "T88"
+connector_type = "88-pin Continental AT"
+color = "Brown"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+wire_color = "RD"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Ground"
+wire_color = "BR"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "Ignition Power"
+wire_color = "RD/VT"
+voltage = 12.0
+signal_type = "Power"
+
+# CAN Bus
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High"
+wire_color = "OR/BK"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 13
+signal_name = "CAN Low"
+wire_color = "OR/BR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# K-Line
+[[ecu.connectors.pins]]
+pin_number = 18
+signal_name = "K-Line"
+wire_color = "BK/WH"
+signal_type = "Digital"
+protocol = "kwp2000"
+
+# Sensor inputs
+[[ecu.connectors.pins]]
+pin_number = 25
+signal_name = "Input Speed Sensor"
+wire_color = "BL/WH"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Transmission Input Speed Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 30
+signal_name = "Output Speed Sensor"
+wire_color = "GN/WH"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Transmission Output Speed Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 35
+signal_name = "ATF Temperature Sensor"
+wire_color = "YE/RD"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Transmission Fluid Temperature Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 40
+signal_name = "Shift Position Sensor"
+wire_color = "VT/WH"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Transmission Range Selector"
+
+# Solenoid outputs
+[[ecu.connectors.pins]]
+pin_number = 50
+signal_name = "Shift Solenoid A"
+wire_color = "BK/RD"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Transmission Shift Solenoid A"
+
+[[ecu.connectors.pins]]
+pin_number = 55
+signal_name = "Shift Solenoid B"
+wire_color = "BK/BL"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Transmission Shift Solenoid B"
+
+[[ecu.connectors.pins]]
+pin_number = 60
+signal_name = "Pressure Control Solenoid"
+wire_color = "BK/YE"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Line Pressure Solenoid"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 15.0
+power_max = 180.0
+fuse_rating = 20.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+eeprom_size_kb = 32
+cpu = "Infineon C166"
+
+# Supported protocols

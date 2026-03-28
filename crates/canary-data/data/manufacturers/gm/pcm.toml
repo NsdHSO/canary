@@ -1,0 +1,157 @@
+# Corvette C7 Powertrain Control Module (Delphi E92)
+
+[[ecu]]
+id = "gm_corvette_c7_2016_pcm_e92"
+name = "Corvette C7 Powertrain Control Module"
+module_type = "PCM"
+manufacturer_id = "gm"
+ecu_manufacturer = "Delphi"
+part_numbers = ["12667581", "12667582", "12667583"]
+supported_protocols = ["can_fd", "can_2.0b", "gmlan", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "General Motors"
+model = "Corvette C7"
+years = [2014, 2015, 2016, 2017, 2018, 2019]
+engine = "6.2L LT1 V8"
+
+# Main 120-pin connector (Black)
+[[ecu.connectors]]
+connector_id = "C1_BLACK"
+connector_type = "120-pin Delphi Weatherpack"
+color = "Black"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+wire_color = "RED"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "ECM Ground"
+wire_color = "BLK"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "Ignition Run"
+wire_color = "ORG"
+voltage = 12.0
+signal_type = "Power"
+
+# Dual CAN buses
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN HS+"
+wire_color = "DK_GRN"
+signal_type = "CAN"
+protocol = "can_fd"
+
+[[ecu.connectors.pins]]
+pin_number = 11
+signal_name = "CAN HS-"
+wire_color = "TAN"
+signal_type = "CAN"
+protocol = "can_fd"
+
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN MS+"
+wire_color = "YEL/BLK"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 13
+signal_name = "CAN MS-"
+wire_color = "TAN/BLK"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# High-performance sensor inputs
+[[ecu.connectors.pins]]
+pin_number = 25
+signal_name = "Wideband O2 Sensor"
+wire_color = "GRY"
+voltage = 2.5
+signal_type = "Analog"
+sensor_actuator = "Wideband Oxygen Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 32
+signal_name = "Boost Pressure Sensor"
+wire_color = "LT_GRN"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "Manifold Absolute Pressure Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 38
+signal_name = "Oil Pressure Sensor"
+wire_color = "TAN/WHT"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "Engine Oil Pressure Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 45
+signal_name = "Knock Sensor 1"
+wire_color = "DK_BLU/WHT"
+voltage = 2.5
+signal_type = "SensorInput"
+sensor_actuator = "Knock Sensor Bank 1"
+
+# Performance actuator outputs
+[[ecu.connectors.pins]]
+pin_number = 55
+signal_name = "Direct Injection 1"
+wire_color = "WHT/RED"
+voltage = 65.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Direct Fuel Injector Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 65
+signal_name = "VVT Intake Solenoid"
+wire_color = "GRN/BLK"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Intake VVT Solenoid"
+
+[[ecu.connectors.pins]]
+pin_number = 70
+signal_name = "VVT Exhaust Solenoid"
+wire_color = "GRN/WHT"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Exhaust VVT Solenoid"
+
+[[ecu.connectors.pins]]
+pin_number = 80
+signal_name = "Active Fuel Management"
+wire_color = "PUR/WHT"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "AFM Valve Lifter Oil Manifold"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 40.0
+power_max = 480.0
+fuse_rating = 50.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 8192
+ram_size_kb = 1024
+eeprom_size_kb = 128
+cpu = "Freescale MPC5777M"
+
+# Supported protocols

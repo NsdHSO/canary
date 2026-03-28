@@ -1,0 +1,143 @@
+# GM Silverado 1500 Engine Control Module (Delphi E78)
+
+[[ecu]]
+id = "gm_silverado_2017_ecm_e78"
+name = "Silverado 1500 Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "gm"
+ecu_manufacturer = "Delphi"
+part_numbers = ["12677351", "12677352", "12677353"]
+supported_protocols = ["gmlan", "j1850_vpw", "can_2.0b", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "General Motors"
+model = "Silverado 1500"
+years = [2017, 2018, 2019, 2020]
+engine = "5.3L V8"
+
+# Main 80-pin connector (Blue)
+[[ecu.connectors]]
+connector_id = "C1_BLUE"
+connector_type = "80-pin Delphi GT150"
+color = "Blue"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Positive"
+wire_color = "RED"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Power Ground"
+wire_color = "BLK"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "Ignition 1 Voltage"
+wire_color = "PNK"
+voltage = 12.0
+signal_type = "Power"
+
+# GMLAN (CAN) Bus - High Speed
+[[ecu.connectors.pins]]
+pin_number = 8
+signal_name = "GMLAN HS+"
+wire_color = "DK_GRN"
+signal_type = "CAN"
+protocol = "gmlan"
+
+[[ecu.connectors.pins]]
+pin_number = 9
+signal_name = "GMLAN HS-"
+wire_color = "TAN"
+signal_type = "CAN"
+protocol = "gmlan"
+
+# OBD-II Data Link
+[[ecu.connectors.pins]]
+pin_number = 15
+signal_name = "OBD-II Data Link"
+wire_color = "WHT"
+signal_type = "Digital"
+protocol = "j1850_vpw"
+
+# Sensor inputs
+[[ecu.connectors.pins]]
+pin_number = 22
+signal_name = "MAF Sensor Signal"
+wire_color = "YEL"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Mass Air Flow Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 28
+signal_name = "ECT Sensor Signal"
+wire_color = "YEL/BLK"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Engine Coolant Temperature Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 35
+signal_name = "TPS Signal"
+wire_color = "DK_BLU"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Throttle Position Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 42
+signal_name = "CKP Sensor Signal"
+wire_color = "PUR/WHT"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Crankshaft Position Sensor"
+
+# Actuator outputs
+[[ecu.connectors.pins]]
+pin_number = 50
+signal_name = "Fuel Injector 1"
+wire_color = "PNK/BLK"
+voltage = 12.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Fuel Injector Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 58
+signal_name = "Ignition Coil 1"
+wire_color = "WHT/BLK"
+voltage = 12.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Ignition Coil Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 65
+signal_name = "VVT Solenoid"
+wire_color = "GRN/WHT"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Variable Valve Timing Solenoid"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 30.0
+power_max = 360.0
+fuse_rating = 40.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+eeprom_size_kb = 64
+cpu = "Freescale MPC5674F"
+
+# Supported protocols

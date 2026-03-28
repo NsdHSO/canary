@@ -1,0 +1,157 @@
+# Toyota RAV4 Hybrid Engine Control Module (Denso 89661-42Q60)
+
+[[ecu]]
+id = "toyota_rav4_hybrid_2020_ecm_denso"
+name = "RAV4 Hybrid Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "toyota"
+ecu_manufacturer = "Denso"
+part_numbers = ["89661-42Q60", "89661-42Q61", "89661-42Q62"]
+supported_protocols = ["can_2.0b", "iso9141", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Toyota"
+model = "RAV4 Hybrid"
+years = [2019, 2020, 2021, 2022, 2023]
+engine = "2.5L A25A-FXS Hybrid"
+
+# Main 100-pin connector (E13)
+[[ecu.connectors]]
+connector_id = "E13"
+connector_type = "100-pin Toyota Hybrid ECM"
+color = "Black"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Main Battery Power"
+wire_color = "W-B"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Ground"
+wire_color = "B"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "IG1 Power"
+wire_color = "BR"
+voltage = 12.0
+signal_type = "Power"
+
+# Dual CAN buses
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "CAN High (Powertrain)"
+wire_color = "L"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 13
+signal_name = "CAN Low (Powertrain)"
+wire_color = "LW"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 14
+signal_name = "CAN High (Hybrid)"
+wire_color = "OR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 15
+signal_name = "CAN Low (Hybrid)"
+wire_color = "OR-B"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# Hybrid-specific sensors
+[[ecu.connectors.pins]]
+pin_number = 25
+signal_name = "HV Battery Voltage Sensor"
+wire_color = "LG-R"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "High Voltage Battery Monitor"
+
+[[ecu.connectors.pins]]
+pin_number = 30
+signal_name = "Motor Generator 1 Resolver"
+wire_color = "P-Y"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "MG1 Resolver"
+
+[[ecu.connectors.pins]]
+pin_number = 35
+signal_name = "Engine Coolant Temp"
+wire_color = "G"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Engine Coolant Temperature Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 42
+signal_name = "Accelerator Position Sensor"
+wire_color = "V-W"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Accelerator Pedal Position Sensor"
+
+# Hybrid actuator outputs
+[[ecu.connectors.pins]]
+pin_number = 55
+signal_name = "Injector 1 Control"
+wire_color = "BR-B"
+voltage = 12.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Direct Injector Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 65
+signal_name = "Hybrid System Relay"
+wire_color = "R-B"
+voltage = 12.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "HV System Main Relay"
+
+[[ecu.connectors.pins]]
+pin_number = 70
+signal_name = "Electric Water Pump"
+wire_color = "LG-B"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Electric Coolant Pump"
+
+[[ecu.connectors.pins]]
+pin_number = 80
+signal_name = "VVT-iE Control"
+wire_color = "P-G"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Electric VVT-i Actuator"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 30.0
+power_max = 360.0
+fuse_rating = 40.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 8192
+ram_size_kb = 1024
+eeprom_size_kb = 128
+cpu = "Renesas RH850/F1KM"
+
+# Supported protocols

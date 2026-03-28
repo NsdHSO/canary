@@ -1,0 +1,157 @@
+# Ford F-150 Powertrain Control Module (Continental EEC-VII)
+
+[[ecu]]
+id = "ford_f150_2018_pcm_eec7"
+name = "F-150 Powertrain Control Module"
+module_type = "PCM"
+manufacturer_id = "ford"
+ecu_manufacturer = "Continental"
+part_numbers = ["JL3A-12A650-APA", "JL3A-12A650-APB", "JL3A-12A650-APC"]
+supported_protocols = ["can_2.0b", "iso15765", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Ford"
+model = "F-150"
+years = [2018, 2019, 2020, 2021]
+engine = "3.5L EcoBoost V6"
+
+# Main 104-pin connector
+[[ecu.connectors]]
+connector_id = "C175"
+connector_type = "104-pin Ford PCM"
+color = "Gray"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Keep Alive Power"
+wire_color = "RD/LG"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Power Ground"
+wire_color = "BK/WH"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "Ignition Power"
+wire_color = "PK/LB"
+voltage = 12.0
+signal_type = "Power"
+
+# HS-CAN and MS-CAN
+[[ecu.connectors.pins]]
+pin_number = 6
+signal_name = "CAN High (HS)"
+wire_color = "VT/OR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 14
+signal_name = "CAN Low (HS)"
+wire_color = "TN/OR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 7
+signal_name = "CAN High (MS)"
+wire_color = "VT/WH"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 15
+signal_name = "CAN Low (MS)"
+wire_color = "TN/WH"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# Sensor inputs
+[[ecu.connectors.pins]]
+pin_number = 25
+signal_name = "MAP Sensor"
+wire_color = "GY/RD"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "Manifold Absolute Pressure Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 32
+signal_name = "Boost Pressure Sensor"
+wire_color = "BR/WH"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "Turbo Boost Pressure Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 40
+signal_name = "Engine Coolant Temp"
+wire_color = "RD/WH"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "ECT Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 47
+signal_name = "Crankshaft Position"
+wire_color = "GY/YL"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "CKP Sensor"
+
+# Turbo and injection outputs
+[[ecu.connectors.pins]]
+pin_number = 55
+signal_name = "Fuel Injector 1"
+wire_color = "BN/LB"
+voltage = 12.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Direct Injector Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 65
+signal_name = "Turbo Wastegate"
+wire_color = "BR/YL"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Turbocharger Wastegate Actuator"
+
+[[ecu.connectors.pins]]
+pin_number = 72
+signal_name = "VCT Intake Solenoid"
+wire_color = "LG/BK"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Variable Cam Timing Intake"
+
+[[ecu.connectors.pins]]
+pin_number = 80
+signal_name = "Fuel Pump Control"
+wire_color = "PK/LG"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Fuel Pump Module"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 35.0
+power_max = 420.0
+fuse_rating = 40.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 6144
+ram_size_kb = 768
+eeprom_size_kb = 96
+cpu = "Freescale MPC5777C"
+
+# Supported protocols

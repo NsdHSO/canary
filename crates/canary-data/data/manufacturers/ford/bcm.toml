@@ -1,0 +1,145 @@
+# Ford Mustang GT Body Control Module (Continental BCM-II)
+
+[[ecu]]
+id = "ford_mustang_gt_2019_bcm_ii"
+name = "Mustang GT Body Control Module"
+module_type = "BCM"
+manufacturer_id = "ford"
+ecu_manufacturer = "Continental"
+part_numbers = ["JR3T-14D520-AA", "JR3T-14D520-AB", "JR3T-14D520-AC"]
+supported_protocols = ["can_2.0b", "lin_2.2", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Ford"
+model = "Mustang GT"
+years = [2018, 2019, 2020, 2021, 2022]
+engine = "5.0L V8"
+
+# Main 48-pin connector
+[[ecu.connectors]]
+connector_id = "C230"
+connector_type = "48-pin Ford BCM"
+color = "Natural"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Direct"
+wire_color = "RD"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "Ground"
+wire_color = "BK"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "Ignition Run/Start"
+wire_color = "PK/LG"
+voltage = 12.0
+signal_type = "Power"
+
+# CAN Bus - HS and MS
+[[ecu.connectors.pins]]
+pin_number = 8
+signal_name = "HS-CAN High"
+wire_color = "VT/OR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 9
+signal_name = "HS-CAN Low"
+wire_color = "TN/OR"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# LIN Bus for lighting
+[[ecu.connectors.pins]]
+pin_number = 12
+signal_name = "LIN Bus"
+wire_color = "OR/LB"
+signal_type = "LIN"
+protocol = "lin_2.2"
+
+# Input switches
+[[ecu.connectors.pins]]
+pin_number = 18
+signal_name = "Door Ajar Input - Driver"
+wire_color = "LG/OR"
+voltage = 12.0
+signal_type = "Digital"
+sensor_actuator = "Driver Door Ajar Switch"
+
+[[ecu.connectors.pins]]
+pin_number = 20
+signal_name = "Hood Ajar Input"
+wire_color = "LB/OR"
+voltage = 12.0
+signal_type = "Digital"
+sensor_actuator = "Hood Ajar Switch"
+
+[[ecu.connectors.pins]]
+pin_number = 22
+signal_name = "Trunk Ajar Input"
+wire_color = "BR/OR"
+voltage = 12.0
+signal_type = "Digital"
+sensor_actuator = "Trunk Ajar Switch"
+
+[[ecu.connectors.pins]]
+pin_number = 25
+signal_name = "Brake Pedal Position"
+wire_color = "WH/PK"
+voltage = 12.0
+signal_type = "Digital"
+sensor_actuator = "Brake Pedal Switch"
+
+# Output controls
+[[ecu.connectors.pins]]
+pin_number = 30
+signal_name = "Headlight Low Beam"
+wire_color = "LG/VT"
+voltage = 12.0
+current_max = 10.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Headlight Relay"
+
+[[ecu.connectors.pins]]
+pin_number = 35
+signal_name = "Horn Control"
+wire_color = "PK/BK"
+voltage = 12.0
+current_max = 15.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Horn Relay"
+
+[[ecu.connectors.pins]]
+pin_number = 40
+signal_name = "Central Lock Motor"
+wire_color = "BN/WH"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "Door Lock Actuator"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 25.0
+power_max = 300.0
+fuse_rating = 30.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+eeprom_size_kb = 64
+cpu = "Renesas RH850/F1L"
+
+# Supported protocols

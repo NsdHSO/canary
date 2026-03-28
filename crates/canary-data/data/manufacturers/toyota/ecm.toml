@@ -1,0 +1,151 @@
+# Toyota Camry Engine Control Module (Denso 89661-06D51)
+
+[[ecu]]
+id = "toyota_camry_2018_ecm_denso"
+name = "Camry Engine Control Module"
+module_type = "ECM"
+manufacturer_id = "toyota"
+ecu_manufacturer = "Denso"
+part_numbers = ["89661-06D51", "89661-06D52", "89661-06D53"]
+supported_protocols = ["can_2.0b", "iso9141", "kwp2000", "uds"]
+
+[[ecu.vehicle_models]]
+manufacturer = "Toyota"
+model = "Camry"
+years = [2018, 2019, 2020, 2021, 2022]
+engine = "2.5L A25A-FKS"
+
+# Main 88-pin connector (E12)
+[[ecu.connectors]]
+connector_id = "E12"
+connector_type = "88-pin Toyota ECM"
+color = "Gray"
+
+# Power pins
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+wire_color = "W"
+voltage = 12.0
+signal_type = "Power"
+
+[[ecu.connectors.pins]]
+pin_number = 2
+signal_name = "ECU Ground"
+wire_color = "B"
+voltage = 0.0
+signal_type = "Ground"
+
+[[ecu.connectors.pins]]
+pin_number = 3
+signal_name = "IG1 Power"
+wire_color = "BR"
+voltage = 12.0
+signal_type = "Power"
+
+# CAN Bus
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+wire_color = "L"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+[[ecu.connectors.pins]]
+pin_number = 11
+signal_name = "CAN Low"
+wire_color = "LW"
+signal_type = "CAN"
+protocol = "can_2.0b"
+
+# K-Line (ISO 9141-2)
+[[ecu.connectors.pins]]
+pin_number = 15
+signal_name = "K-Line"
+wire_color = "BR-W"
+signal_type = "Digital"
+protocol = "iso9141"
+
+# Sensor inputs
+[[ecu.connectors.pins]]
+pin_number = 22
+signal_name = "MAF Meter Signal"
+wire_color = "Y"
+voltage = 5.0
+signal_type = "Analog"
+sensor_actuator = "Mass Air Flow Meter"
+
+[[ecu.connectors.pins]]
+pin_number = 28
+signal_name = "ECT Sensor Signal"
+wire_color = "G"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Engine Coolant Temperature Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 35
+signal_name = "Throttle Position Sensor"
+wire_color = "V"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Throttle Position Sensor"
+
+[[ecu.connectors.pins]]
+pin_number = 40
+signal_name = "Crankshaft Position Sensor"
+wire_color = "LG"
+voltage = 5.0
+signal_type = "SensorInput"
+sensor_actuator = "Crankshaft Position Sensor"
+
+# D4S (Direct Injection 4-Stroke Superior) system
+[[ecu.connectors.pins]]
+pin_number = 50
+signal_name = "DI Injector 1"
+wire_color = "BR-B"
+voltage = 12.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Direct Injector Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 55
+signal_name = "Port Injector 1"
+wire_color = "P"
+voltage = 12.0
+signal_type = "ActuatorOutput"
+sensor_actuator = "Port Injector Cylinder 1"
+
+[[ecu.connectors.pins]]
+pin_number = 65
+signal_name = "VVT-i Solenoid Intake"
+wire_color = "LG-B"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "VVT-i Oil Control Valve Intake"
+
+[[ecu.connectors.pins]]
+pin_number = 70
+signal_name = "VVT-i Solenoid Exhaust"
+wire_color = "V-B"
+voltage = 12.0
+signal_type = "PWM"
+sensor_actuator = "VVT-i Oil Control Valve Exhaust"
+
+# Power requirements
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 25.0
+power_max = 300.0
+fuse_rating = 30.0
+
+# Flash memory specifications
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+eeprom_size_kb = 64
+cpu = "Renesas RH850/F1K"
+
+# Supported protocols
