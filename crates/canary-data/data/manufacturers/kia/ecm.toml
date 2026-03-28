@@ -1,0 +1,297 @@
+# Kia Engine Control Modules
+
+[[ecu]]
+id = "kia_forte_2020_ecm"
+name = "Forte 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "kia"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2E050"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Forte"
+years = [2017, 2018, 2019, 2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
+
+[[ecu]]
+id = "kia_optima_2020_ecm"
+name = "Optima 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "kia"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2G050"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Optima"
+years = [2018, 2019, 2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "kia_sorento_2021_ecm"
+name = "Sorento 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "kia"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2S050"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Sorento"
+years = [2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "kia_sportage_2020_ecm"
+name = "Sportage 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "kia"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2E150"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Sportage"
+years = [2020]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "kia_soul_2021_ecm"
+name = "Soul 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "kia"
+ecu_manufacturer = "Kefico"
+part_numbers = ["39199-2E250"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Soul"
+years = [2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Kefico"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Renesas RH850"
+
+[[ecu]]
+id = "kia_forte_2021_tcm"
+name = "Forte 2021 TCM"
+module_type = "TCM"
+manufacturer_id = "kia"
+ecu_manufacturer = "Hyundai Transys"
+part_numbers = ["46115-2E050"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Forte"
+years = [2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Hyundai Transys"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 1024
+ram_size_kb = 128
+cpu = "Renesas V850"
+
+[[ecu]]
+id = "kia_sorento_2020_bcm"
+name = "Sorento 2020 BCM"
+module_type = "BCM"
+manufacturer_id = "kia"
+ecu_manufacturer = "Hyundai Mobis"
+part_numbers = ["95400-C5050"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Sorento"
+years = [2020, 2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Hyundai Mobis"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "NXP MPC5748G"
+
+[[ecu]]
+id = "kia_sportage_2021_abs"
+name = "Sportage 2021 ABS"
+module_type = "ABS"
+manufacturer_id = "kia"
+ecu_manufacturer = "Mando"
+part_numbers = ["58920-F1350"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Kia"
+model = "Sportage"
+years = [2021]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Mando"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 512
+ram_size_kb = 64
+cpu = "Infineon TC1766"
