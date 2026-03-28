@@ -1,0 +1,19 @@
+[package]
+name = "canary-capture"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Real-time CAN bus capture, filtering, logging, and replay"
+
+[dependencies]
+canary-hardware = { path = "../canary-hardware" }
+tokio = { workspace = true }
+thiserror = { workspace = true }
+rusqlite = { version = "0.32", features = ["bundled"] }
+log = "0.4"
+chrono = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }
+tempfile = "3"
