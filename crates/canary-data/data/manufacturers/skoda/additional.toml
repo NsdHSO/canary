@@ -1,0 +1,297 @@
+# Skoda Additional Engine Control Modules
+
+[[ecu]]
+id = "skoda_kodiaq_2020_ecm"
+name = "Kodiaq 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["06L906056TC"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Kodiaq"
+years = [2017, 2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "skoda_octavia_2021_ecm"
+name = "Octavia 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["04E906027SC"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Octavia"
+years = [2017, 2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "skoda_superb_2020_ecm"
+name = "Superb 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["06L906056UC"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Superb"
+years = [2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore TC1797"
+
+[[ecu]]
+id = "skoda_karoq_2020_ecm"
+name = "Karoq 2020 ECM"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["04E906027QC"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Karoq"
+years = [2018, 2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
+
+[[ecu]]
+id = "skoda_scala_2021_ecm"
+name = "Scala 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["04E906027RC"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Scala"
+years = [2019, 2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
+
+[[ecu]]
+id = "skoda_kamiq_2021_ecm"
+name = "Kamiq 2021 ECM"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["04C906025DC"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Kamiq"
+years = [2020, 2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
+
+[[ecu]]
+id = "skoda_enyaq_2022_ecm"
+name = "Enyaq 2022 Motor Controller"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Continental"
+part_numbers = ["1EA907115S"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Enyaq iV"
+years = [2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Continental"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 4096
+ram_size_kb = 512
+cpu = "Infineon TriCore AURIX"
+
+[[ecu]]
+id = "skoda_fabia_2022_ecm"
+name = "Fabia 2022 ECM"
+module_type = "ECM"
+manufacturer_id = "skoda"
+ecu_manufacturer = "Bosch"
+part_numbers = ["04C906025EC"]
+supported_protocols = ["can_2.0b", "uds"]
+[[ecu.vehicle_models]]
+manufacturer = "Skoda"
+model = "Fabia"
+years = [2021, 2022]
+[[ecu.connectors]]
+connector_id = "C1"
+connector_type = "96-pin Bosch"
+color = "Black"
+[[ecu.connectors.pins]]
+pin_number = 1
+signal_name = "Battery Power"
+voltage = 12.0
+signal_type = "Power"
+[[ecu.connectors.pins]]
+pin_number = 10
+signal_name = "CAN High"
+signal_type = "CAN"
+protocol = "can_2.0b"
+[ecu.power_requirements]
+voltage_min = 9.0
+voltage_nominal = 12.0
+voltage_max = 16.0
+current_max = 18.0
+fuse_rating = 20.0
+[ecu.flash_memory]
+flash_size_kb = 2048
+ram_size_kb = 256
+cpu = "Infineon TriCore TC1793"
