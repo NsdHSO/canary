@@ -1,6 +1,6 @@
 # Rust
 target/
-Cargo.lock
+# Cargo.lock - INCLUDED: Binary projects must commit lock file
 
 # IDE
 .idea/
