@@ -8,6 +8,14 @@ use serde::Deserialize;
 use crate::error::{ApiError, ApiResult, ErrorResponse};
 use crate::models::*;
 
+/// Simple health check for Railway monitoring
+pub async fn health() -> Json<serde_json::Value> {
+    Json(serde_json::json!({
+        "status": "ok",
+        "service": "canary-api"
+    }))
+}
+
 /// Health check endpoint
 #[utoipa::path(
     get,

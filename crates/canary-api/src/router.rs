@@ -62,6 +62,8 @@ pub fn create_router() -> Router {
         .allow_headers(Any);
 
     Router::new()
+        // Railway health check (simple endpoint for monitoring)
+        .route("/health", get(handlers::health))
         // Health check
         .route("/api/v1/health", get(handlers::health_check))
         // Diagnostics
