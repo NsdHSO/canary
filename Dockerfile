@@ -4,7 +4,6 @@ WORKDIR /app
 
 # Copy manifests and source
 COPY Cargo.toml Cargo.lock ./
-COPY .cargo .cargo
 COPY crates ./crates
 COPY migration ./migration
 
