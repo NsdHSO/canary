@@ -32,7 +32,6 @@ members = [
     "crates/canary-premium",
     "crates/canary-api",
     "migration",
-    "docker/can-simulator",
 ]
 
 [workspace.dependencies]
