@@ -9,6 +9,11 @@ async fn main() -> Result<(), DbErr> {
     println!("Connecting to database...");
     let db = Database::connect(&db_url).await?;
 
+    // Create canary schema if it doesn't exist
+    println!("Creating canary schema if not exists");
+    db.execute_unprepared("CREATE SCHEMA IF NOT EXISTS canary")
+        .await?;
+
     // Ensure search_path is set to canary schema
     println!("Setting search_path to canary, public");
     db.execute_unprepared("SET search_path TO canary, public")
