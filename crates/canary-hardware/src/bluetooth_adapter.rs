@@ -4,6 +4,7 @@ use tokio::sync::Mutex;
 
 use crate::adapter_trait::{AdapterType, CanAdapter, CanFrame};
 use crate::error::CanError;
+use crate::obd_vendor::ObdVendor;
 
 /// Bluetooth scan result
 #[derive(Debug, Clone)]
@@ -72,24 +73,13 @@ impl BluetoothAdapter {
         // For now, return empty list on non-Linux or when btleplug is not linked
         let _ = timeout_secs;
 
-        // Known OBD adapter name patterns
-        let _obd_patterns = [
-            "OBD", "ELM", "OBDII", "OBDLink", "Vgate", "iCar",
-            "KONNWEI", "Veepeak", "Foseal", "Panlong",
-        ];
-
         log::info!("Bluetooth scan complete");
         Ok(Vec::new())
     }
 
     /// Check if a device name looks like an OBD adapter
     pub fn is_obd_device_name(name: &str) -> bool {
-        let name_upper = name.to_uppercase();
-        let patterns = [
-            "OBD", "ELM", "OBDII", "OBDLINK", "VGATE", "ICAR",
-            "KONNWEI", "VEEPEAK", "FOSEAL", "PANLONG",
-        ];
-        patterns.iter().any(|p| name_upper.contains(p))
+        ObdVendor::from_device_name(name).is_some()
     }
 }
 
