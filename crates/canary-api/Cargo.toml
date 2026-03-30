@@ -6,9 +6,14 @@ authors.workspace = true
 license.workspace = true
 description = "REST API server with WebSocket streaming for Canary diagnostics"
 
+[[bin]]
+name = "canary-api"
+path = "src/main.rs"
+
 [dependencies]
 canary-core = { path = "../canary-core" }
 canary-models = { path = "../canary-models" }
+canary-database = { path = "../canary-database" }
 canary-hardware = { path = "../canary-hardware" }
 canary-uds = { path = "../canary-uds" }
 canary-premium = { path = "../canary-premium" }
